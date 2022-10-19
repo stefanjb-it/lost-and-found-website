@@ -5,5 +5,5 @@ information about the location where the object was found and were it can be
 picked up.
 
 The authors of the project are
-Alexander Jahrer and
-Stefan Jöbstl
+[Feiwioh](https://github.com/Feiwioh) and
+[Stefan](https://github.com/stefanjb-it)
