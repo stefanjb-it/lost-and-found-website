@@ -1,0 +1,38 @@
+h2 {
+    text-align: center;
+    font-size: 40px;
+    line-height: 1;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+div {
+    margin: auto;
+}
+
+.post {
+    width: 80%;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 5%;
+    padding: 5% 5%;
+    border: 1px solid rgb(206, 45, 45);
+    border-radius: 10px;
+    background-color: #95a5a6;
+}
+
+.by {
+    left: 0;
+    bottom: 0;
+    position: absolute;
+    width: 100%;
+    background-color: lightgray;
+    text-align: center;
+    border-top: 2px solid black;
+}
+
+h4 {
+    font-size: small;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    margin: 0px;
+}

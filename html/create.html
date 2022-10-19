@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+
+<html lang="de">
+
+<head>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+    <meta http-equiv="Content-Security-Policy" content="default-src * 'unsafe-inline' 'unsafe-eval'; script-src * 'unsafe-inline' 'unsafe-eval'; connect-src * 'unsafe-inline'; img-src * data: blob: 'unsafe-inline'; frame-src *; style-src * 'unsafe-inline';">
+    <link rel="shortcut icon" type="image/png" href="rsz_lostandfoundlogored.png" />
+    <link rel="stylesheet" href="main.css">
+    <link rel="stylesheet" href="create.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>
+        Lost and Found Webseite der HTL M&ouml;ssingerstrasse
+    </title>
+</head>
+
+<body>
+    <img class="logoimg" src="LostAndFoundLogoRED.png" alt="Logo"></img>
+    <div class="head">
+        <h1>Lost &<br/>Found</h1>
+    </div>
+
+    <div class="formDiv">
+        <form id="form" method="POST" enctype="multipart/form-data">
+            <label for="location_before">Fundort:</label>
+            <input type="text" id="txtfield" name="location_before" required><br>
+
+            <label for="location_now">Aktueller Standort:</label>
+            <input type="text" id="txtfield" name="location_now" required><br>
+
+            <label for="cat">Kategorie:</label><br>
+            <select class="form-control" name="cat" id="filter" required>
+                <option value="Alles">Alles</option>
+                <option value="Ger&auml;te">Ger&auml;te</option>
+                <option value="Kleidung">Kleidung</option>
+                <option value="Schulsachen">Schulsachen</option>
+                <option value="Sonstiges">Sonstiges</option>
+            </select>
+
+            <input type="file" id="realbtn" required hidden="hidden" name="ImageUpload" /><br>
+            <label for="file" class="uploadLabel" id="fakebtn">
+                <span id="customspan">Bitte Bild auswählen oder aufnehmen</span>
+            </label>
+
+            <input type="submit" class="btn btn-success btn-block" id="sub_btn" value="Beitrag erstellen" /><br>
+        </form>
+    </div>
+
+</body>
+<script src="save.js"></script>
+<script type="text/javascript">
+    const realbtn = document.getElementById("realbtn");
+    const fakebtn = document.getElementById("fakebtn");
+    const text = document.getElementById("customspan");
+    const submitbtn = document.getElementById("sub_btn");
+
+    fakebtn.addEventListener("click", function() {
+        realbtn.click();
+    });
+
+    realbtn.addEventListener("change", function() {
+        if (realbtn.value) {
+            text.innerHTML = "Foto hochgeladen!"
+        }
+    })
+
+    function cookie() {
+        return document.cookie;
+    }
+
+</script>
+
+</html>

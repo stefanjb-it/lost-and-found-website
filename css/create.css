@@ -1,0 +1,19 @@
+.formDiv {
+    width: 90%;
+    margin: auto;
+    color: rgb(103, 183, 185);
+    padding-top: 5px;
+}
+
+input {
+    width: 100%;
+}
+
+.uploadLabel {
+    text-align: center;
+    width: 100%;
+    background-color: #3D5AFE;
+    border-radius: 4px;
+    color: white;
+    padding: 7px 7px;
+}
