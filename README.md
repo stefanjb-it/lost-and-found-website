@@ -1,9 +1,3 @@
-# Lost and Found Website
+# Branch DEV2
 
-This project is to build a website where you can upload a picture + give some 
-information about the location where the object was found and were it can be 
-picked up.
-
-The authors of the project are
-Alexander Jahrer and
-Stefan Jöbstl
+This branch is for the frontend.
