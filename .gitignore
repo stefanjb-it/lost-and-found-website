@@ -1,0 +1,6 @@
+node_modules/
+uploads/*.png
+uploads/*.jpg
+.vscode
+*.key
+*.cert

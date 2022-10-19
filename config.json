@@ -1,0 +1,8 @@
+{
+    "DB_hostname": "db",
+    "DB_schema": "lostandfound",
+    "DB_username": "root",
+    "DB_password": "xZxYmvEpm32CcYFj",
+    "LDAP_IP": "ldap://192.168.11.1:389",
+    "LDAP_BASE_DN": "stevenelectric\\"
+}

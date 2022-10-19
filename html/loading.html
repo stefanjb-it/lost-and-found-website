@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+
+<html lang="de">
+
+<head>
+    <meta http-equiv="refresh" content="5;url=https://lostandfound.stevenelectric.icu/" />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+    <meta http-equiv="Content-Security-Policy"
+        content="default-src * 'unsafe-inline' 'unsafe-eval'; script-src * 'unsafe-inline' 'unsafe-eval'; connect-src * 'unsafe-inline'; img-src * data: blob: 'unsafe-inline'; frame-src *; style-src * 'unsafe-inline';">
+    <link rel="shortcut icon" type="image/png" href="rsz_lostandfoundlogored.png" />
+    <link rel="stylesheet" href="main.css">
+    <link rel="stylesheet" href="loading.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Loading Page</title>
+</head>
+
+<body>
+    <img id="randomGif" src="" />
+</body>
+
+<script>
+    window.onload = choosePic;
+
+    function choosePic() {
+        var randomNum = Math.floor(Math.random() * gifs.length);
+        document.getElementById("randomGif").src = gifs[randomNum];
+    }
+
+    var gifs = new Array("https://media.giphy.com/media/WXB88TeARFVvi/giphy.gif",
+        "https://media.giphy.com/media/MDJ9IbxxvDUQM/giphy.gif",
+        "https://media.giphy.com/media/CjmvTCZf2U3p09Cn0h/giphy.gif",
+        "https://media.giphy.com/media/JIX9t2j0ZTN9S/giphy.gif",
+        "https://media.giphy.com/media/9IRX12VhoXoR2/giphy.gif",
+        "https://media.giphy.com/media/S6VGjvmFRu5Qk/giphy.gif",
+        "https://media.giphy.com/media/B7ppUExX92PjW/giphy.gif",
+        "https://media.giphy.com/media/a1kftfCMBOa0o/giphy.gif",
+        "https://media.giphy.com/media/GwGXoeb0gm7sc/giphy.gif",
+        "https://media.giphy.com/media/8A0umYU5i1ptu/giphy.gif",
+        "https://media.giphy.com/media/FsSOIASsQbJyE/giphy.gif",
+        "https://media.giphy.com/media/C23cMUqoZdqMg/giphy.gif",
+        "https://media.giphy.com/media/EmMWgjxt6HqXC/giphy.gif");
+</script>
+
+</html>

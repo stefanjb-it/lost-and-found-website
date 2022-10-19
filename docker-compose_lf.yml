@@ -1,0 +1,53 @@
+version: "3"
+services:
+  webapp:
+    image: "node:12.18.0-alpine3.9"
+    user: "root"
+    working_dir: /home/node/app
+    environment:
+      - NODE_ENV=production
+    volumes:
+      - ./lost-and-found-website/:/home/node/app
+    ports:
+      - "80:80"
+      - "443:443"
+    networks:
+      - default
+    command: "npm start"
+    container_name: webapp
+    restart: unless-stopped
+
+  db:
+    image: mysql:latest
+    restart: unless-stopped
+    container_name: db
+    command: --default-authentication-plugin=mysql_native_password
+    environment:
+      MYSQL_DATABASE: "lostandfound"
+      MYSQL_ROOT_PASSWORD: "xZxYmvEpm32CcYFj"
+      MYSQL_DEFAULT_AUTHENTIFICATION_PLUGIN: "mysql_native_password"
+    ports:
+      - "3306:3306"
+    expose:
+      - "3306"
+    networks:
+      - default
+    volumes:
+      - ./lost-and-found-website/db_init/:/docker-entrypoint-initdb.d/
+    cap_add:
+      - SYS_NICE
+  db_access:
+    build: ./lost-and-found-website/db_access_init
+    image: db_access_init:latest
+    container_name: db_access_init
+    networks:
+      - default
+    environment:
+      - WAIT_BEFORE_HOSTS=15
+      - WAIT_HOSTS=db:3306
+      - WAIT_HOSTS_TIMEOUT=300
+      - WAIT_SLEEP_INTERVAL=30
+      - WAIT_HOST_CONNECT_TIMEOUT=30
+networks:
+  default:
+    driver: bridge

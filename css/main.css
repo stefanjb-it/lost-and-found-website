@@ -1,0 +1,28 @@
+body {
+    background-color: #383e42;
+    overflow: auto;
+}
+
+h1 {
+    text-align: center;
+    font-size: 60px;
+    line-height: 1;
+    color: rgb(206, 45, 45);
+}
+
+.head {
+    border-bottom: mintcream solid 2px;
+}
+
+.logoimg {
+    width: 25%;
+    padding: 5px 0px 0px 5px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 0px;
+}
+
+#filter {
+    border: 1px solid rgb(206, 45, 45);
+}

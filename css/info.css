@@ -1,0 +1,25 @@
+body {
+    -webkit-overflow-scrolling: touch;
+}
+
+.mid {
+    width: 90%;
+    margin: auto;
+}
+
+.postImg {
+    width: 100%;
+    margin: auto;
+    display: block;
+    margin-top: 15px;
+    border-radius: 10px;
+}
+
+h5 {
+    color: rgb(103, 183, 185);
+    font-size: 17px;
+}
+
+button {
+    margin: 15px 0px 15px 0px;
+}
