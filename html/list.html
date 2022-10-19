@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+
+<html lang="de">
+
+<head>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+    <meta http-equiv="Content-Security-Policy" content="default-src * 'unsafe-inline' 'unsafe-eval'; script-src * 'unsafe-inline' 'unsafe-eval'; connect-src * 'unsafe-inline'; img-src * data: blob: 'unsafe-inline'; frame-src *; style-src * 'unsafe-inline';">
+    <link rel="shortcut icon" type="image/png" href="rsz_lostandfoundlogored.png" />
+    <link rel="stylesheet" href="main.css">
+    <link rel="stylesheet" href="list.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>
+        Lost and Found Webseite der HTL M&ouml;ssingerstrasse
+    </title>
+</head>
+
+<body>
+    <img class="logoimg" src="LostAndFoundLogoRED.png" alt="Logo"></img>
+    <div class="head">
+        <h1>Lost &<br/>Found</h1>
+    </div>
+
+    <div class="form-group">
+        <div class="col-sm-2">
+            <select class="form-control" id="filter">
+                <option value="Alles">Alles</option>
+                <option value="Ger&auml;te">Ger&auml;te</option>
+                <option value="Kleidung">Kleidung</option>
+                <option value="Schulsachen">Schulsachen</option>
+                <option value="Sonstiges">Sonstiges</option>
+            </select>
+        </div>
+    </div>
+
+    <div class="container">
+    </div>
+</body>
+
+<script>
+    fetch('/listing', {
+            method: 'GET'
+        })
+        .then(response => response.text())
+        .then(data => {
+            console.log(data);
+            const listing = JSON.parse(data);
+            var perrow = 1,
+                html = "<table><tr>";
+            for (var i = 0; i < Object.keys(listing).length; i++) {
+                html += '<td><img src="' + listing[i].picture + '"/></td>';
+                html += "</tr><tr>";
+                html += '<td><button class="btn btn-lg btn-warning btn-block" id="moreinfo" onclick=\"window.location=\'info\'\">Anzeigen</button><br><td>';
+                var next = i + 1;
+                if (next % perrow == 0 && next != data.length) {
+                    html += "</tr><tr>";
+                }
+            }
+            html += "</tr></table>";
+            document.getElementsByClassName("container")[0].innerHTML = html;
+        });
+</script>
+
+</html>

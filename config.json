@@ -1,0 +1,6 @@
+{
+    "DB_hostname":"mysql.stevenelectric.icu",
+    "DB_schema":"lostandfound",
+    "DB_username":"lost_and_found",
+    "DB_password":"lf"
+}
